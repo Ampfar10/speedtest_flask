@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+    
+    
+    <title>speeeeeeed!!!</title>
+    <style>
+          
+        body {
+              background-color: #151515;
+              color: #eee;
+              font-family: 'Share Tech Mono', monospace;
+              user-select: none;
+        }
+        .num{
+            color: rgb(207, 185, 142)
+        }
+        .button {
+            display: inline-block;
+            border-radius: 4px;
+            background-color: #110c0b;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+          }
+          
+          .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+          }
+          
+          .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+          }
+          
+          .button:hover span {
+            padding-right: 25px;
+          }
+          
+          .button:hover span:after {
+            opacity: 1;
+            right: 0;   
+           }
+          
+           footer {
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            height: 50px;
+            padding:15px;
+            
+        }   
+    
+    </style>
+</head>
+<body>
+    <div class="info">
+        <p>Testing your Internet speed,<br>Don't get lost in wormhole...</p>
+        
+        <center>
+        <p style="color: rgb(86, 67, 153);">Ip address</p>
+        <span style="color: rgb(106, 163, 118);">{{ip}}</span>
+
+        <br>
+        <p style="color: rgb(7, 194, 47);">Download (Mbps)</p>
+        <span class="num">{{download}}</span>
+        
+        <br>
+        <p style="color: rgb(192, 23, 23);">Upload (Mbps)</p>
+        <span class="num">{{upload}}</span>
+        
+        <p style="color: rgb(206, 223, 61);">Ping</p>
+        <span class="num">{{ping}}</span>
+        
+        <p style="color: rgb(108, 231, 215);">Internet Service Provider</p>
+        <span style="color: rgb(106, 163, 118);">{{client}}/{{city}}</span>
+
+        <br>  <br>  <br>  <br>
+    <br>
+    </div>
+    <div class="start-button">
+        <form action="/" method="POST">
+            <input type="hidden" name="name" value="1"/>
+            <center>
+            <button class="button" style="vertical-align:middle"type="submit"><span>Start</span></button>
+            </center>
+        </form>  
+    </div>
+        
+     </center>   
+     <footer>
+    
+        <a href="https://github.com/bksec"> Berkay Küçük </a></footer>
+    <script type="text/javascript">
+        
+        
+        $(".num").counterUp({delay:20,time:2000});
+        document.querySelector(".button").addEventListener("click", function(){ 
+        
+        setTimeout(function(){ 
+            document.querySelector(".button").innerHTML = "Loading"; 
+            document.querySelector(".button").disabled = true;
+        }, 1000);
+    }); 
+    
+    </script>
+</body>
+</html>
