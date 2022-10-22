@@ -45,4 +45,4 @@ def home():
         return render_template('index.html',ip="there is no place like 127.0.0.1", download=0, upload=0,ping=0,client="---",city="---")	
 
 if __name__ == '__main__':
-    app.run(host=0.0.0.0, port=1234)
+    app.run(host='0.0.0.0' , port='1234')
